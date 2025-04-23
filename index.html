@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Punch-In System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #a90000, #ff5733);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            border: none;
+            font-size: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e6e6e6;
+        }
+        .instructions {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Staff Punch-In System</h1>
+        <input type="password" id="passcode" placeholder="Enter your 4-digit passcode">
+        <button onclick="punch('in')">Punch In</button>
+        <button onclick="punch('out')">Punch Out</button>
+        <div class="instructions">Enter your passcode and select your action.</div>
+    </div>
+
+    <script>
+    function punch(action) {
+        var passcodeInput = document.getElementById('passcode');
+        var passcode = passcodeInput.value;
+        google.script.run.withSuccessHandler(function(response) {
+            alert(response);
+            passcodeInput.value = '';
+        }).recordPunch(action, passcode);
+    }
+</script>
+</body>
+</html>
