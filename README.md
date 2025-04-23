@@ -137,5 +137,5 @@ SCAN THE QR CODE TO ACCESS OUR AUTOMATED ATTENDANCE SYSTEM INTERFACE
  User Code: 9999
 ---
 
-**🌟 Developed by MN Jewel for EZX Solution**  
+**🌟 Developed by MN Jewel for W3JDEV**  
 *Accurate. Automated. Efficient.*
